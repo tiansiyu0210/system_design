@@ -16,8 +16,14 @@ public class FileConfigFactory {
         else if("xml".equalsIgnoreCase(fileType)){
             config = new XmlFileConfig();
         }
-        else if("yaml".equalsIgnoreCase(fileType)){
+        else if ("yaml".equalsIgnoreCase(fileType)) {
             config = new YamlFileConfig();
+        }
+
+        // if we add a new fileConfig, we have to update here
+        //violated open-close principal a little bit
+        else if ("csv".equalsIgnoreCase(fileType)) {
+            config = new CsvFileConfig();
         }
 
         return config;

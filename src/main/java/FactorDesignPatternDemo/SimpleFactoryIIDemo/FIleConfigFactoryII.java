@@ -1,9 +1,6 @@
 package FactorDesignPatternDemo.SimpleFactoryIIDemo;
 
-import FactorDesignPatternDemo.SimpleFactoryDemo.FileConfig;
-import FactorDesignPatternDemo.SimpleFactoryDemo.JsonFileConfig;
-import FactorDesignPatternDemo.SimpleFactoryDemo.XmlFileConfig;
-import FactorDesignPatternDemo.SimpleFactoryDemo.YamlFileConfig;
+import FactorDesignPatternDemo.SimpleFactoryDemo.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +12,9 @@ public class FIleConfigFactoryII {
         cashedConfigMap.put("json", new JsonFileConfig());
         cashedConfigMap.put("xml", new XmlFileConfig());
         cashedConfigMap.put("yaml", new YamlFileConfig());
+        // if we add a new fileConfig, we have to update here
+        //violated open-close principal a little bit
+        cashedConfigMap.put("csv", new CsvFileConfig());
     }
 
     public static FileConfig getConfig(String fileType) {
