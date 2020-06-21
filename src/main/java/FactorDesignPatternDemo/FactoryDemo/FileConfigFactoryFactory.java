@@ -14,6 +14,7 @@ public class FileConfigFactoryFactory {
         map.put("json", new JsonConfigCreatorFactory());
         map.put("xml", new XmlConfigCreatorFactory());
         map.put("yaml", new YamlConfigCreatorFactory());
+        map.put("csv", new CsvConfigCreatorFactory());
     }
 
     public static FileConfigCreatorFactory getCreatorFactory(String fileType) {

@@ -22,5 +22,12 @@ public class App {
                 .createFactory()
                 .getConfig()
         );
+
+        //add a new fileConfig
+        System.out.println(FileConfigFactoryFactory
+                .getCreatorFactory("csv")
+                .createFactory()
+                .getConfig()
+        );
     }
 }
