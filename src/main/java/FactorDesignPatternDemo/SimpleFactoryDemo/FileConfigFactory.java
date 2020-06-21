@@ -5,9 +5,12 @@ public class FileConfigFactory {
         FileConfig config = null;
 
         if(fileType == null || fileType.length() == 0){
-            throw new RuntimeException();//or return
+            throw new RuntimeException();//or return null
         }
-        if("json".equalsIgnoreCase(fileType)){
+        if("json".equalsIgnoreCase(fileType)) {
+            // if the process for creating a new instance is complicated,
+            // not just "config = new JsonFileConfig();"
+            // we could use factory method (factory's factory)
             config = new JsonFileConfig();
         }
         else if("xml".equalsIgnoreCase(fileType)){
