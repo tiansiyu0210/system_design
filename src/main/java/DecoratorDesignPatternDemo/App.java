@@ -10,5 +10,13 @@ public class App {
         driveAge.ageDifference(800);
         System.out.println("===============");
         driveAge.canDrive();
+
+        System.out.println("**********************");
+        System.out.println("**********************");
+
+        //嵌套
+        HighSchoolChildAgeDecorator highSchoolChildAgeDecorator = new HighSchoolChildAgeDecorator(ageParentDecorator);
+        CollegeChildAgeDecorator collegeChildAgeDecorator = new CollegeChildAgeDecorator(highSchoolChildAgeDecorator);
+        collegeChildAgeDecorator.getAge();
     }
 }
