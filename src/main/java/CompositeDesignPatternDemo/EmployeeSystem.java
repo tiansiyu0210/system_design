@@ -11,4 +11,6 @@ public abstract class EmployeeSystem {
     }
 
     public abstract int getSalary();
+
+    public abstract int getCount();
 }

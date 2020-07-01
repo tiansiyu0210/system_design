@@ -12,4 +12,9 @@ public class Employee extends EmployeeSystem {
     public int getSalary() {
         return this.salary;
     }
+
+    @Override
+    public int getCount() {
+        return 1;
+    }
 }

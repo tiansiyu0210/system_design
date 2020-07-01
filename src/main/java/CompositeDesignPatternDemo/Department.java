@@ -29,7 +29,12 @@ public class Department extends EmployeeSystem {
         return sum;
     }
 
-    public int count() {
-        return this.employees.size();
+    @Override
+    public int getCount() {
+        int sum = 0;
+        for (EmployeeSystem e : employees) {
+            sum += e.getCount();
+        }
+        return sum;
     }
 }
