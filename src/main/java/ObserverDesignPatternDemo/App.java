@@ -12,7 +12,7 @@ public class App {
         UserService userService = new UserService();
         String status = userService.registerNewUser(newUser);
         if ("SUCCESS".equalsIgnoreCase(status)) {
-            List<NewUserRegisterObserver> observers = new ArrayList<>();
+            List<NewUserRegisterObserver> observers = new ArrayList<NewUserRegisterObserver>();
             observers.add(new FreeGiftServiceObserverImpl(new FreeGiftService()));
             observers.add(new FreeShippingServiceObserverImpl(new FreeShippingService()));
             observers.add(new CouponServiceObserverImpl(new CouponService()));
